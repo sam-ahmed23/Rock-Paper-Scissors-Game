@@ -4,7 +4,7 @@ A responsive **Rock Paper Scissors** game built using **HTML, CSS, and JavaScrip
 Includes multiple themes, smooth animations, and Best of 5 gameplay.  
 
 ## 🚀 Live Demo  
-👉 [Play Here](https://sameer-rps-game.netlify.app)  
+👉 [Play Here] https://sam-ahmed-rock-paper-scissors-game.netlify.app/
 
 ## Features  
 - Classic Rock-Paper-Scissors gameplay  
