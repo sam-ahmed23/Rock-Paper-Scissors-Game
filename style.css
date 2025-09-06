@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   transition: background 0.6s ease-in-out;
+  overflow-x: hidden;
 }
 
 /* ===== Header ===== */
@@ -204,12 +205,15 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ===== Themes (cycle) ===== */
+/* ===== Themes (order: purple → blue → black → green → red) ===== */
+body.theme-purple {
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+}
 body.theme-blue {
   background: linear-gradient(135deg, #89f7fe, #66a6ff);
 }
-body.theme-purple {
-  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+body.theme-black {
+  background: linear-gradient(135deg, #232526, #414345);
 }
 body.theme-green {
   background: linear-gradient(135deg, #11998e, #38ef7d);
@@ -217,6 +221,15 @@ body.theme-green {
 body.theme-red {
   background: linear-gradient(135deg, #ff416c, #ff4b2b);
 }
-body.theme-dark {
-  background: linear-gradient(135deg, #232526, #414345);
+
+/* ===== Scroll Reveal Animation ===== */
+.reveal {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.8s ease-in-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: scale(1);
 }
