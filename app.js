@@ -12,8 +12,8 @@ const bestOfBtn = document.querySelector("#bestof-btn");
 const historyList = document.querySelector("#history-list");
 const themeToggle = document.querySelector("#theme-toggle");
 
-// theme cycle list
-const themes = ["theme-blue", "theme-purple", "theme-green", "theme-red", "theme-dark"];
+// Theme order: purple → blue → black → green → red
+const themes = ["theme-purple", "theme-blue", "theme-black", "theme-green", "theme-red"];
 let currentTheme = 0;
 
 // Generate computer choice
@@ -54,7 +54,7 @@ const showWinner = (userWin, userChoice, compChoice) => {
 
 // Handle draw
 const drawGame = (choice) => {
-  updateMsg(`It's a draw! You both choose ${choice}`, "draw");
+  updateMsg(`It's a draw! You both chose ${choice}`, "draw");
   addHistory(choice, choice, "➖ Draw");
 };
 
@@ -138,3 +138,21 @@ choices.forEach((choice) => {
     playGame(userChoice);
   });
 });
+
+// ===== Scroll Reveal Animation =====
+const reveals = document.querySelectorAll(".reveal");
+
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  reveals.forEach((el) => {
+    const boxTop = el.getBoundingClientRect().top;
+
+    if (boxTop < triggerBottom) {
+      el.classList.add("active");
+    }
+  });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
