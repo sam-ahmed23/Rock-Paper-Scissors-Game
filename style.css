@@ -1,0 +1,222 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+body {
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.6s ease-in-out;
+}
+
+/* ===== Header ===== */
+header {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+#theme-toggle {
+  background: #fff;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#theme-toggle:hover {
+  background: #ffcc00;
+  transform: scale(1.05);
+}
+
+/* ===== Choices ===== */
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.choice {
+  height: 20vw;
+  width: 20vw;
+  max-height: 140px;
+  max-width: 140px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.choice:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #fff;
+}
+.choice:active::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: ripple 0.4s linear;
+}
+
+.choice img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+.choice:hover img {
+  transform: scale(1.15);
+}
+
+@keyframes ripple {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* ===== Scoreboard ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 1.5rem auto;
+  width: 85%;
+  max-width: 600px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+}
+
+#user-score,
+#comp-score {
+  font-size: 3rem;
+  transition: all 0.3s;
+}
+
+/* ===== Messages ===== */
+.msg-container {
+  margin-top: 1rem;
+}
+#msg {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: #333;
+  color: #fff;
+  transition: background 0.4s, transform 0.3s;
+}
+#msg.win {
+  background: #28a745;
+  transform: scale(1.05);
+}
+#msg.lose {
+  background: #dc3545;
+  transform: scale(1.05);
+}
+#msg.draw {
+  background: #17a2b8;
+  transform: scale(1.05);
+}
+
+/* ===== Controls ===== */
+.controls {
+  margin: 2rem;
+}
+.controls button {
+  margin: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.controls button:hover {
+  background: #ff9800;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ===== History ===== */
+.history {
+  max-height: 150px;
+  overflow-y: auto;
+  text-align: left;
+}
+.history h2 {
+  margin-bottom: 0.5rem;
+}
+.history ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+}
+.history li {
+  margin: 0.2rem 0;
+  padding: 0.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Footer ===== */
+footer {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ===== Themes (cycle) ===== */
+body.theme-blue {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+}
+body.theme-purple {
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+}
+body.theme-green {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+body.theme-red {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+body.theme-dark {
+  background: linear-gradient(135deg, #232526, #414345);
+}

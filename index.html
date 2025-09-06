@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="theme-blue">
+    <header>
+      <h1>✊ Rock ✋ Paper ✌ Scissors</h1>
+      <button id="theme-toggle">🎨 Change Theme</button>
+    </header>
+
+    <main>
+      <div class="choices">
+        <div class="choice" id="rock">
+          <img src="images/rock.png" alt="Rock" />
+        </div>
+        <div class="choice" id="paper">
+          <img src="images/paper.png" alt="Paper" />
+        </div>
+        <div class="choice" id="scissors">
+          <img src="images/scissors.png" alt="Scissors" />
+        </div>
+      </div>
+
+      <div class="score-board glass">
+        <div class="score">
+          <p id="user-score">0</p>
+          <p>You</p>
+        </div>
+        <div class="score">
+          <p id="comp-score">0</p>
+          <p>Computer</p>
+        </div>
+      </div>
+
+      <div class="msg-container">
+        <p id="msg">Play your move</p>
+      </div>
+
+      <div class="controls">
+        <button id="reset-btn">🔄 Reset Game</button>
+        <button id="bestof-btn">🏆 Best of 5</button>
+      </div>
+
+      <div class="history glass">
+        <h2>Game History</h2>
+        <ul id="history-list"></ul>
+      </div>
+    </main>
+
+    <footer>
+      <p>⚡ Rock Paper Scissors - Sameer Ahmed Creation ⚡</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
