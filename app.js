@@ -154,5 +154,3 @@ const revealOnScroll = () => {
   });
 };
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
