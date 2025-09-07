@@ -91,13 +91,24 @@ h1 {
   object-fit: cover;
   border-radius: 50%;
   transition: transform 0.3s ease-in-out;
-  outline: none;
-  border: none;
+  
   -webkit-tap-highlight-color: transparent;
 
 }
 .choice:hover img {
   transform: scale(1.15);
+}
+.choice img {
+  outline: none !important;
+  border: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -moz-outline: none !important;
+}
+
+.choice:focus img,
+.choice:active img {
+  outline: none !important;
+  border: none !important;
 }
 
 @keyframes ripple {
