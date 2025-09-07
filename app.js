@@ -54,7 +54,7 @@ const showWinner = (userWin, userChoice, compChoice) => {
 
 // Handle draw
 const drawGame = (choice) => {
-  updateMsg(`It's a draw! You both chose ${choice}`, "draw");
+  updateMsg(`It's a draw! You both choose ${choice}`, "draw");
   addHistory(choice, choice, "➖ Draw");
 };
 
